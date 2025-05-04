@@ -94,11 +94,6 @@ This is a research prototype demonstrating:
 - Advanced indexing methods
 - Enhanced search capabilities
 - Production-ready optimizations
-
-## Contribute
-
-Interested in vector representation research? We welcome contributions, experiments, and innovative ideas!
-
 ---
 
 *Exploring the geometric frontiers of data representation*
