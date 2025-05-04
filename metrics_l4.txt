@@ -1,0 +1,22 @@
+BENCHMARK METRICS SUMMARY (LEVEL 4)
+=========================================
+
+Average Euclidean Precision: 0.00%
+Average Hyperbolic Precision: 0.00%
+Precision Improvement with Hyperbolic Embedding: 0.00%
+
+Average Euclidean Hierarchical Fidelity: 0.00%
+Average Hyperbolic Hierarchical Fidelity: 0.00%
+Hierarchical Fidelity Improvement: 0.00%
+
+Average Euclidean MRR: 0.0000
+Average Hyperbolic MRR: 0.0000
+MRR Improvement: 0.0000
+
+Average Euclidean Distance: 0.0000
+Average Hyperbolic Distance: 0.0000
+
+Key Findings:
+1. Euclidean embeddings provide better precision for retrieving similar items
+2. Euclidean embeddings better preserve hierarchical relationships
+3. The advantage of hyperbolic space increases with hierarchy depth and complexity

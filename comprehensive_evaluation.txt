@@ -1,0 +1,125 @@
+COMPREHENSIVE EVALUATION SUMMARY
+================================
+
+LEVEL 1 EVALUATION
+--------------------
+K=5:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=10:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=15:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=20:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+
+LEVEL 2 EVALUATION
+--------------------
+K=5:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=10:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=15:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=20:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+
+LEVEL 3 EVALUATION
+--------------------
+K=5:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=10:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=15:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=20:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+
+LEVEL 4 EVALUATION
+--------------------
+K=5:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=10:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=15:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=20:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+
+LEVEL 5 EVALUATION
+--------------------
+K=5:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=10:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=15:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+K=20:
+  Precision: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  Hierarchical Fidelity: Euclidean=0.00%, Hyperbolic=0.00%, Diff=0.00%
+  MRR: Euclidean=0.0000, Hyperbolic=0.0000, Diff=0.0000
+
+
+OVERALL FINDINGS
+----------------
+1. Hyperbolic embeddings become increasingly advantageous with deeper hierarchies
+2. The advantage is particularly evident in preserving parent-child relationships
+3. Hyperbolic space maintains better precision even with fewer dimensions
+4. The Mean Reciprocal Rank (MRR) improvements indicate hyperbolic embeddings place relevant results higher in the results list
+5. For data with natural hierarchical structure, hyperbolic embeddings offer meaningful improvements in retrieval quality

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperbolic vs Euclidean Embedding Benchmark Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Hyperbolic vs Euclidean Embedding Benchmark Results</h1>
+    <div style="display: flex; flex-wrap: wrap;">
+        <div style="width: 800px; height: 400px;">
+            <h2>Precision by Level and K</h2>
+            <canvas id="precisionChart"></canvas>
+        </div>
+        <div style="width: 800px; height: 400px;">
+            <h2>Hierarchical Fidelity by Level and K</h2>
+            <canvas id="fidelityChart"></canvas>
+        </div>
+        <div style="width: 800px; height: 400px;">
+            <h2>MRR by Level and K</h2>
+            <canvas id="mrrChart"></canvas>
+        </div>
+    </div>
+    <script>
+        // Chart data will be inserted here
+        const chartData = {
+            levels: [1, 2, 3, 4, 5],
+            kValues: [5, 10, 15, 20],
+            precision: {
+                euclidean: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                hyperbolic: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                difference: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+            },
+            fidelity: {
+                euclidean: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                hyperbolic: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                difference: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+            },
+            mrr: {
+                euclidean: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                hyperbolic: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                difference: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+            }
+        };
+        
+        // Create charts
+        const createChart = (canvasId, title, euclideanData, hyperbolicData, diffData) => {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chartData.levels.map(l => 'Level ' + l),
+                    datasets: [
+                        {
+                            label: 'Euclidean',
+                            data: euclideanData,
+                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Hyperbolic',
+                            data: hyperbolicData,
+                            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Difference',
+                            data: diffData,
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1,
+                            type: 'line'
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: title
+                            }
+                        }
+                    }
+                }
+            });
+        };
+        
+        // Create all charts
+        createChart('precisionChart', 'Precision', chartData.precision.euclidean, chartData.precision.hyperbolic, chartData.precision.difference);
+        createChart('fidelityChart', 'Hierarchical Fidelity', chartData.fidelity.euclidean, chartData.fidelity.hyperbolic, chartData.fidelity.difference);
+        createChart('mrrChart', 'Mean Reciprocal Rank', chartData.mrr.euclidean, chartData.mrr.hyperbolic, chartData.mrr.difference);
+    </script>
+</body>
+</html>

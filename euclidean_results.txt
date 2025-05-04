@@ -1,0 +1,45 @@
+EUCLIDEAN EMBEDDING RESULTS
+==========================
+
+Query: Category-1
+Results:
+  1. Category-1 (Category: 1, Distance: 0.0000)
+  2. Category-1-Subcat-1 (Category: 1, Distance: 0.1289)
+  3. Category-1-Subcat-0 (Category: 1, Distance: 0.1653)
+  4. Category-1-Subcat-2 (Category: 1, Distance: 0.1895)
+  5. Category-1-Subcat-3 (Category: 1, Distance: 0.2783)
+  6. Category-1-Subcat-4 (Category: 1, Distance: 0.3162)
+  7. Category-2-Subcat-2 (Category: 2, Distance: 0.5142)
+  8. Category-2-Subcat-1 (Category: 2, Distance: 0.5677)
+  9. Root (Category: 0, Distance: 0.5968)
+  10. Category-2-Subcat-4 (Category: 2, Distance: 0.6259)
+Accuracy: 60.00%
+
+Query: Category-0
+Results:
+  1. Category-0 (Category: 0, Distance: 0.0000)
+  2. Category-0-Subcat-4 (Category: 0, Distance: 0.0818)
+  3. Category-0-Subcat-0 (Category: 0, Distance: 0.1332)
+  4. Category-0-Subcat-1 (Category: 0, Distance: 0.1629)
+  5. Category-0-Subcat-2 (Category: 0, Distance: 0.1693)
+  6. Category-0-Subcat-3 (Category: 0, Distance: 0.1965)
+  7. Category-2-Subcat-0 (Category: 2, Distance: 0.3632)
+  8. Category-2-Subcat-3 (Category: 2, Distance: 0.4087)
+  9. Category-2 (Category: 2, Distance: 0.4447)
+  10. Root (Category: 0, Distance: 0.5241)
+Accuracy: 70.00%
+
+Query: Category-2
+Results:
+  1. Category-2 (Category: 2, Distance: 0.0000)
+  2. Category-2-Subcat-1 (Category: 2, Distance: 0.1319)
+  3. Category-2-Subcat-0 (Category: 2, Distance: 0.1816)
+  4. Category-2-Subcat-3 (Category: 2, Distance: 0.1893)
+  5. Category-2-Subcat-4 (Category: 2, Distance: 0.1971)
+  6. Category-2-Subcat-2 (Category: 2, Distance: 0.2167)
+  7. Category-0-Subcat-0 (Category: 0, Distance: 0.3120)
+  8. Root (Category: 0, Distance: 0.3968)
+  9. Category-0 (Category: 0, Distance: 0.4447)
+  10. Category-0-Subcat-1 (Category: 0, Distance: 0.4485)
+Accuracy: 60.00%
+

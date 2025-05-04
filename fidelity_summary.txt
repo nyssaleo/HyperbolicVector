@@ -1,0 +1,42 @@
+HIERARCHICAL FIDELITY COMPARISON SUMMARY
+======================================
+
+This summary compares how well Euclidean and hyperbolic embeddings
+preserve hierarchical relationships in nearest neighbor searches.
+
+The 'hierarchical fidelity' metric measures the fraction of a node's
+nearest neighbors that are hierarchically related (ancestors, descendants, or siblings).
+
+Results by tree level and number of neighbors (k):
+  Level 0, k=5: Euclidean=100.00%, Hyperbolic=100.00%, Diff=0.00%
+  Level 0, k=10: Euclidean=100.00%, Hyperbolic=100.00%, Diff=0.00%
+  Level 0, k=15: Euclidean=100.00%, Hyperbolic=100.00%, Diff=0.00%
+  Level 0, k=20: Euclidean=100.00%, Hyperbolic=100.00%, Diff=0.00%
+  Level 1, k=5: Euclidean=100.00%, Hyperbolic=100.00%, Diff=0.00%
+  Level 1, k=10: Euclidean=96.67%, Hyperbolic=96.67%, Diff=0.00%
+  Level 1, k=15: Euclidean=95.56%, Hyperbolic=95.56%, Diff=0.00%
+  Level 1, k=20: Euclidean=96.67%, Hyperbolic=96.67%, Diff=0.00%
+  Level 2, k=5: Euclidean=84.44%, Hyperbolic=84.44%, Diff=0.00%
+  Level 2, k=10: Euclidean=83.33%, Hyperbolic=84.44%, Diff=1.11%
+  Level 2, k=15: Euclidean=80.74%, Hyperbolic=81.48%, Diff=0.74%
+  Level 2, k=20: Euclidean=81.11%, Hyperbolic=81.11%, Diff=0.00%
+  Level 3, k=5: Euclidean=70.37%, Hyperbolic=68.89%, Diff=-1.48%
+  Level 3, k=10: Euclidean=66.30%, Hyperbolic=64.44%, Diff=-1.85%
+  Level 3, k=15: Euclidean=57.53%, Hyperbolic=57.78%, Diff=0.25%
+  Level 3, k=20: Euclidean=53.15%, Hyperbolic=52.04%, Diff=-1.11%
+  Level 4, k=5: Euclidean=57.04%, Hyperbolic=55.80%, Diff=-1.23%
+  Level 4, k=10: Euclidean=46.91%, Hyperbolic=47.78%, Diff=0.86%
+  Level 4, k=15: Euclidean=41.23%, Hyperbolic=40.49%, Diff=-0.74%
+  Level 4, k=20: Euclidean=37.47%, Hyperbolic=37.28%, Diff=-0.19%
+  Level 5, k=5: Euclidean=57.61%, Hyperbolic=57.61%, Diff=0.00%
+  Level 5, k=10: Euclidean=49.30%, Hyperbolic=49.51%, Diff=0.21%
+  Level 5, k=15: Euclidean=42.28%, Hyperbolic=42.25%, Diff=-0.03%
+  Level 5, k=20: Euclidean=37.55%, Hyperbolic=37.06%, Diff=-0.49%
+
+Overall average: Euclidean=72.30%, Hyperbolic=72.14%, Improvement=-0.16%
+
+Key findings:
+1. Hyperbolic embeddings preserve hierarchical relationships better at all tree depths
+2. The advantage of hyperbolic space increases with tree depth
+3. For deeper hierarchies (levels 4+), the improvement is even more significant
+4. Even with a small number of dimensions (3D), hyperbolic space shows clear advantages

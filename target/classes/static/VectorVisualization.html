@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperbolic Vector Database | Visualization</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+</head>
+<body>
+<div class="app-container">
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+                <pre class="ascii-banner">
+ _   _                       _           _ _
+| | | |_   _ _ __   ___ _ __| |__   ___ | (_) ___
+| |_| | | | | '_ \ / _ \ '__| '_ \ / _ \| | |/ __|
+|  _  | |_| | |_) |  __/ |  | |_) | (_) | | | (__
+|_| |_|\__, | .__/ \___|_|  |_.__/ \___/|_|_|\___|
+       |___/|_|      Vector Database</pre>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active" data-tab="visualize">Visualize</a></li>
+                <li><a href="#" data-tab="compare">Compare</a></li>
+                <li><a href="#" data-tab="learn">Learn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Control Panel -->
+        <section class="control-panel glass-card">
+            <h2><i class="fas fa-sliders"></i> Control Panel</h2>
+            <div class="control-groups">
+                <div class="control-group">
+                    <h3>Collections</h3>
+                    <div class="form-group">
+                        <label for="collection-select">Select Collection</label>
+                        <select id="collection-select" class="glass-input">
+                            <option value="">-- Select a Collection --</option>
+                        </select>
+                    </div>
+                    <button id="refresh-collections" class="btn btn-primary">
+                        <i class="fas fa-sync-alt"></i> Refresh Collections
+                    </button>
+                </div>
+
+                <div class="control-group">
+                    <h3>Query Vector</h3>
+                    <div class="form-group">
+                        <label for="query-x">X Component</label>
+                        <input type="number" id="query-x" value="0.3" step="0.1" class="glass-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="query-y">Y Component</label>
+                        <input type="number" id="query-y" value="0.4" step="0.1" class="glass-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="query-z">Z Component</label>
+                        <input type="number" id="query-z" value="0.5" step="0.1" class="glass-input">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>Search Options</h3>
+                    <div class="form-group">
+                        <label for="space-type">Space Type</label>
+                        <div class="toggle-group">
+                            <input type="radio" id="space-euclidean" name="space-type" value="euclidean" checked>
+                            <label for="space-euclidean" class="toggle-btn">Euclidean</label>
+                            <input type="radio" id="space-hyperbolic" name="space-type" value="hyperbolic">
+                            <label for="space-hyperbolic" class="toggle-btn">Hyperbolic</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="search-k">Number of Results (k)</label>
+                        <input type="range" id="search-k" value="10" min="1" max="20" class="glass-input range">
+                        <span id="k-value">10</span>
+                    </div>
+                    <button id="search-button" class="btn btn-accent">
+                        <i class="fas fa-search"></i> Search Similar Vectors
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization Tabs -->
+        <div class="tab-container">
+            <!-- Visualize Tab -->
+            <div class="tab-content active" id="visualize-tab">
+                <div class="visualization-container">
+                    <div class="visualization-card glass-card">
+                        <h3><i class="fas fa-cube"></i> Euclidean Space (3D)</h3>
+                        <div class="visualization-wrapper">
+                            <canvas id="euclidean-canvas"></canvas>
+                            <div class="overlay-controls">
+                                <button class="viz-control" id="euclidean-rotate">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button class="viz-control" id="euclidean-zoom-in">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button class="viz-control" id="euclidean-zoom-out">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visualization-card glass-card">
+                        <h3><i class="fas fa-circle"></i> Hyperbolic Space (Poincaré Disk)</h3>
+                        <div class="visualization-wrapper">
+                            <canvas id="hyperbolic-canvas"></canvas>
+                            <div class="overlay-controls">
+                                <button class="viz-control" id="hyperbolic-rotate">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button class="viz-control" id="hyperbolic-zoom-in">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button class="viz-control" id="hyperbolic-zoom-out">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-container glass-card">
+                    <div class="results-header">
+                        <h3><i class="fas fa-table"></i> Search Results</h3>
+                        <div class="results-stats">
+                                <span class="stat">
+                                    <i class="fas fa-sitemap"></i>
+                                    <span id="category-count">0</span> Categories
+                                </span>
+                            <span class="stat">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span id="entropy-value">0</span> Entropy
+                                </span>
+                            <span class="stat">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span id="purity-value">0</span> Purity
+                                </span>
+                        </div>
+                    </div>
+                    <div class="results-table-wrapper">
+                        <table class="results-table" id="results-table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Vector</th>
+                                <th>Distance</th>
+                                <th>Score</th>
+                                <th>Level</th>
+                                <th>Category</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Results will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compare Tab -->
+            <div class="tab-content" id="compare-tab">
+                <div class="comparison-container">
+                    <div class="comparison-card glass-card">
+                        <h3><i class="fas fa-balance-scale"></i> Space Comparison</h3>
+                        <div class="comparison-charts">
+                            <div class="chart-container">
+                                <h4>Category Distribution</h4>
+                                <div id="category-chart"></div>
+                            </div>
+                            <div class="chart-container">
+                                <h4>Distance Distribution</h4>
+                                <div id="distance-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metrics-card glass-card">
+                        <h3><i class="fas fa-chart-line"></i> Performance Metrics</h3>
+                        <div class="metrics-wrapper">
+                            <div class="metric-container">
+                                <div class="metric">
+                                    <div class="metric-title">Entropy (Lower is Better)</div>
+                                    <div class="metric-bars">
+                                        <div class="metric-label">Euclidean</div>
+                                        <div class="metric-bar-container">
+                                            <div class="metric-bar euclidean-bar" style="width: 75%"></div>
+                                            <div class="metric-value" id="euclidean-entropy">0.75</div>
+                                        </div>
+                                        <div class="metric-label">Hyperbolic</div>
+                                        <div class="metric-bar-container">
+                                            <div class="metric-bar hyperbolic-bar" style="width: 45%"></div>
+                                            <div class="metric-value" id="hyperbolic-entropy">0.45</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="metric">
+                                    <div class="metric-title">Purity (Higher is Better)</div>
+                                    <div class="metric-bars">
+                                        <div class="metric-label">Euclidean</div>
+                                        <div class="metric-bar-container">
+                                            <div class="metric-bar euclidean-bar" style="width: 80%"></div>
+                                            <div class="metric-value" id="euclidean-purity">0.8</div>
+                                        </div>
+                                        <div class="metric-label">Hyperbolic</div>
+                                        <div class="metric-bar-container">
+                                            <div class="metric-bar hyperbolic-bar" style="width: 95%"></div>
+                                            <div class="metric-value" id="hyperbolic-purity">0.95</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learn Tab -->
+            <div class="tab-content" id="learn-tab">
+                <div class="learn-container">
+                    <div class="concept-card glass-card">
+                        <h3><i class="fas fa-lightbulb"></i> Understanding Vector Spaces</h3>
+                        <div class="concept-content">
+                            <div class="concept-text">
+                                <h4>What's the difference?</h4>
+                                <p>Euclidean space is what we're familiar with - our everyday 3D world. Distance is measured using straight lines (as the crow flies).</p>
+                                <p>Hyperbolic space has a curved geometry where parallel lines diverge. This creates exponentially more "space" as you move away from the center, making it ideal for representing hierarchical relationships.</p>
+                            </div>
+                            <div class="concept-illustration">
+                                <div class="illustration-container" id="space-illustration"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analogy-card glass-card">
+                        <h3><i class="fas fa-map"></i> Real-World Analogy</h3>
+                        <div class="analogy-content">
+                            <div class="analogy-text">
+                                <h4>Think of it like maps</h4>
+                                <p>Euclidean space is like a geographic map showing direct distances between cities.</p>
+                                <p>Hyperbolic space is like a subway map that emphasizes connections and relationships rather than physical distances.</p>
+                            </div>
+                            <div class="analogy-illustration">
+                                <div class="illustration-tabs">
+                                    <button class="illustration-tab active" data-illustration="map">Map View</button>
+                                    <button class="illustration-tab" data-illustration="subway">Subway View</button>
+                                </div>
+                                <div class="illustration-content">
+                                    <div class="illustration-item active" id="map-illustration"></div>
+                                    <div class="illustration-item" id="subway-illustration"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-card">
+        <div class="footer-content">
+            <p>&copy; 2025 Hyperbolic Vector Database</p>
+            <p>Built for e6data Computing Project</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Messages -->
+<div class="message error-message" id="error-message"></div>
+<div class="spinner" id="spinner"></div>
+
+<!-- Scripts -->
+<script src="js/visualizer.js"></script>
+</body>
+</html>

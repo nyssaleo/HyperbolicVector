@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperbolic Vector Database</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+<header>
+    <pre id="ascii-banner" class="ascii-banner"></pre>
+    <h1 class="banner-gradient">Hyperbolic Vector Database</h1>
+    <p class="subtitle">Visualizing Euclidean and Hyperbolic Vector Spaces</p>
+</header>
+
+<div class="container">
+    <!-- Introduction Section -->
+    <div class="card explanation">
+        <h2>What is this?</h2>
+        <p>This is a specialized system that organizes information in a way that naturally respects parent-child relationships. Instead of using normal flat geometry (Euclidean), we use curved geometry (hyperbolic) that gives more room to branches as they grow.</p>
+
+        <div class="comparison">
+            <div class="comparison-item">
+                <h4>Traditional Vector Databases</h4>
+                <p>Use flat Euclidean geometry where distances are measured in straight lines. Great for general purpose, but hierarchical relationships become distorted as complexity increases.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Hyperbolic Vector Database</h4>
+                <p>Uses curved hyperbolic space which naturally expands exponentially from the center. Perfect for hierarchical data like product categories, organizational charts, or knowledge graphs.</p>
+            </div>
+        </div>
+
+        <p>In simpler terms: We've built a smarter way to organize and search information that mimics how humans think about relationships between things, rather than forcing everything into a flat structure.</p>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="card controls">
+        <div class="control-group">
+            <h3>Collections</h3>
+            <label for="collection-select">Select Collection</label>
+            <select id="collection-select">
+                <option value="">-- Select a Collection --</option>
+            </select>
+            <button id="refresh-collections">Refresh Collections</button>
+
+            <div class="collection-info">
+                <label>Collection Info</label>
+                <div>Dimension: <span id="collection-dimension">-</span></div>
+                <div>Type: <span id="collection-type">-</span></div>
+                <div>Vectors: <span id="collection-count">-</span></div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <h3>Search Options</h3>
+            <label for="space-type">Space Type</label>
+            <select id="space-type">
+                <option value="euclidean">Euclidean</option>
+                <option value="hyperbolic">Hyperbolic (Poincaré Ball)</option>
+            </select>
+
+            <label for="visualization-mode">Visualization Mode</label>
+            <select id="visualization-mode">
+                <option value="standard">Standard</option>
+                <option value="hierarchy">Hierarchical</option>
+                <option value="comparison">Comparison</option>
+            </select>
+
+            <label for="search-k">Number of Results (k)</label>
+            <input type="number" id="search-k" value="10" min="1" max="100">
+
+            <button id="search-button">Search Similar Vectors</button>
+        </div>
+
+        <div class="control-group">
+            <h3>Query Vector</h3>
+            <div class="vector-dimension">
+                <label for="query-x">X Component</label>
+                <input type="number" id="query-x" value="0.3" step="0.1" min="-1" max="1">
+            </div>
+
+            <div class="vector-dimension">
+                <label for="query-y">Y Component</label>
+                <input type="number" id="query-y" value="0.4" step="0.1" min="-1" max="1">
+            </div>
+
+            <div class="vector-dimension">
+                <label for="query-z">Z Component</label>
+                <input type="number" id="query-z" value="0.5" step="0.1" min="-1" max="1">
+            </div>
+        </div>
+    </div>
+
+    <div class="error-message" id="error-message"></div>
+    <div class="spinner" id="spinner"></div>
+
+    <div class="visualization-container">
+        <div class="card visualization">
+            <h3>Euclidean Space</h3>
+            <canvas id="euclidean-canvas"></canvas>
+        </div>
+        <div class="card visualization">
+            <h3>Hyperbolic Space (Poincaré Disk)</h3>
+            <canvas id="hyperbolic-canvas"></canvas>
+        </div>
+    </div>
+
+    <div class="card vector-info" id="results-section" style="display: none;">
+        <h3>Search Results</h3>
+        <p>The table below shows the search results ordered by similarity. Notice how results are naturally grouped in hyperbolic space based on their hierarchical relationships.</p>
+        <table class="info-table" id="results-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Distance</th>
+                <th>Score</th>
+                <th>Vector</th>
+                <th>Metadata</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Results will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Additional Information Section -->
+    <div class="card">
+        <h3>How Hyperbolic Space Helps</h3>
+        <p>In hyperbolic geometry, space expands exponentially as you move away from the origin. This means we can represent hierarchical structures more efficiently:</p>
+
+        <ul>
+            <li>Tree-like structures can be embedded with minimal distortion</li>
+            <li>Better clustering of related concepts</li>
+            <li>More efficient representation with fewer dimensions</li>
+            <li>More natural representation of taxonomies and hierarchies</li>
+        </ul>
+
+        <p>Try different query vectors and observe how the results cluster differently in Euclidean vs. Hyperbolic space!</p>
+    </div>
+</div>
+
+<script src="/js/visualizer.js"></script>
+</body>
+</html>

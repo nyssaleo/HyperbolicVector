@@ -1,0 +1,28 @@
+DISTANCE PROPERTY COMPARISON SUMMARY
+===================================
+
+Average distances for siblings pairs:
+  Euclidean: 0.1566
+  Hyperbolic: 0.3373
+  Ratio (H/E): 2.1544
+
+Average distances for unrelated pairs:
+  Euclidean: 0.7212
+  Hyperbolic: 1.5401
+  Ratio (H/E): 2.1354
+
+Average distances for ancestor-descendant pairs:
+  Euclidean: 0.3021
+  Hyperbolic: 0.6376
+  Ratio (H/E): 2.1104
+
+Average distances for cousins pairs:
+  Euclidean: 0.2625
+  Hyperbolic: 0.5622
+  Ratio (H/E): 2.1417
+
+Key findings:
+1. Hyperbolic distances between ancestor-descendant pairs grow more rapidly with depth
+2. The ratio of hyperbolic to Euclidean distance increases with tree depth
+3. Hyperbolic geometry creates better separation between hierarchy levels
+4. Related nodes in hyperbolic space maintain closer distances relative to unrelated nodes

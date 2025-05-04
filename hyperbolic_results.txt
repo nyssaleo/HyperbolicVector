@@ -1,0 +1,45 @@
+HYPERBOLIC EMBEDDING RESULTS
+===========================
+
+Query: Category-1
+Results:
+  1. Category-1-Subcat-1 (Category: 1, Distance: 1.2854)
+  2. Category-1-Subcat-0 (Category: 1, Distance: 1.3499)
+  3. Category-1 (Category: 1, Distance: 1.4781)
+  4. Category-1-Subcat-2 (Category: 1, Distance: 1.7739)
+  5. Category-1-Subcat-4 (Category: 1, Distance: 1.8973)
+  6. Category-1-Subcat-3 (Category: 1, Distance: 2.0222)
+  7. Category-2-Subcat-2 (Category: 2, Distance: 2.5200)
+  8. Category-2-Subcat-1 (Category: 2, Distance: 2.6247)
+  9. Category-2-Subcat-4 (Category: 2, Distance: 2.6989)
+  10. Root (Category: 0, Distance: 2.7527)
+Accuracy: 60.00%
+
+Query: Category-0
+Results:
+  1. Category-0-Subcat-2 (Category: 0, Distance: 0.9470)
+  2. Category-0-Subcat-3 (Category: 0, Distance: 1.0401)
+  3. Category-0 (Category: 0, Distance: 1.1918)
+  4. Category-0-Subcat-4 (Category: 0, Distance: 1.2726)
+  5. Category-0-Subcat-0 (Category: 0, Distance: 1.4051)
+  6. Category-0-Subcat-1 (Category: 0, Distance: 1.4602)
+  7. Category-2-Subcat-0 (Category: 2, Distance: 1.8086)
+  8. Category-2-Subcat-3 (Category: 2, Distance: 2.0087)
+  9. Category-2 (Category: 2, Distance: 2.0290)
+  10. Category-2-Subcat-1 (Category: 2, Distance: 2.2734)
+Accuracy: 60.00%
+
+Query: Category-2
+Results:
+  1. Category-2 (Category: 2, Distance: 0.7997)
+  2. Category-2-Subcat-4 (Category: 2, Distance: 0.8595)
+  3. Category-2-Subcat-0 (Category: 2, Distance: 0.9161)
+  4. Category-2-Subcat-1 (Category: 2, Distance: 0.9860)
+  5. Category-2-Subcat-3 (Category: 2, Distance: 1.1407)
+  6. Category-2-Subcat-2 (Category: 2, Distance: 1.1845)
+  7. Category-0-Subcat-0 (Category: 0, Distance: 1.2259)
+  8. Category-0 (Category: 0, Distance: 1.4724)
+  9. Category-0-Subcat-4 (Category: 0, Distance: 1.5813)
+  10. Category-0-Subcat-1 (Category: 0, Distance: 1.6113)
+Accuracy: 60.00%
+
