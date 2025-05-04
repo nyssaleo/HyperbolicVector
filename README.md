@@ -1,72 +1,51 @@
-# HyperbolicVectorDB: Hierarchical Vector Database Prototype
+# HyperbolicVectorDB: Exploring Geometric Data Representations
 
-## The Motivation
+## Background
 
-During my work on machine learning inference optimization, I became fascinated by the challenges of efficiently representing complex, hierarchical relationships in high-dimensional spaces. This project explores how hyperbolic geometry can provide more nuanced vector representations.
+When i was wokring on machine learning inference optimization work, I faced a recurring thought problem: representing complex, nested relationships in high-dimensional spaces. This project began as an exploration of how alternative geometric models might offer new perspectives on data embedding.
 
-## What is HyperbolicVectorDB?
+## Project Status: Prototype in Development
 
-A prototype vector database that supports both Euclidean and Hyperbolic (Poincaré) vector spaces, demonstrating the potential of alternative geometric representations for hierarchical data.
+HyperbolicVectorDB is an early-stage research project investigating vector embeddings using hyperbolic geometry. My goal is to understand how different geometric spaces can represent hierarchical data structures.
 
-## Benchmark Insights
+## Current Capabilities
 
-In our comprehensive evaluation across different hierarchical datasets:
+### Vector Space Support
+- Euclidean vector representations
+- Poincaré ball (Hyperbolic) vector representations
+- Basic vector space conversion
 
-### Performance Metrics
-- **Euclidean Accuracy**: 63.33%
-- **Hyperbolic Accuracy**: 60.00%
-
-### Key Findings
-1. **Hierarchical Relationship Preservation**: Hyperbolic embeddings excel in capturing nested structures
-2. **Dimensional Efficiency**: Requires fewer dimensions for equivalent performance
-3. **Depth Sensitivity**: Advantages become more pronounced in deeper, more complex hierarchies
-4. **Ranking Quality**: Improved Mean Reciprocal Rank (MRR) for hierarchical data
-
-## Key Features
-
-- **Multi-Space Support**: Store and query vectors in Euclidean and Hyperbolic spaces
-- **Flexible Vector Storage**: Multiple precision formats
-- **Metadata Tagging**: Associate rich metadata with vectors
-- **Basic Indexing**: Flat vector indexing
-- **REST API**: Simple vector database operations
-
-## Supported Vector Storage Formats
-
-- Float32 (default)
-- Float16
-- Integer8 (INT8)
-- Normalized Float4 (NF4)
-
-## Core Capabilities
-
-- Create and manage vector collections
-- Store vectors with metadata
-- Retrieve vectors by ID
-- Basic similarity search
-- Metadata-based filtering
-
-## Curvature Learning (Experimental)
-
-The project includes experimental curvature learning mechanisms:
-- Grid Search Curvature Learner
-- Gradient Descent Curvature Learner
-
-Designed to dynamically adapt embedding parameters for different hierarchical structures.
-
-## Technical Highlights
-
-- Java-based implementation
-- Spring Boot REST API
+### Storage Mechanisms
 - In-memory vector storage
-- Custom vector space conversion
-- Hyperbolic geometry exploration
+- Metadata tagging
+- Multiple precision formats:
+  - Float32 (default)
+  - Float16
+  - Integer8 (INT8)
+  - Normalized Float4 (NF4)
 
-## Potential Applications
+### Experimental Features
+- Adaptive curvature learning
+  - Grid Search Curvature Learner
+  - Gradient Descent Curvature Learner
+- Basic REST API for vector operations
 
-1. Knowledge Graph Embedding
-2. Hierarchical Data Representation
-3. Semantic Search
-4. Experimental Machine Learning Research
+## Mathematical Foundations
+
+The project explores how hyperbolic geometry can represent hierarchical relationships differently from Euclidean spaces:
+- Constant negative curvature
+- Exponential volume growth
+- Natural representation of tree-like structures
+
+## Preliminary Findings
+
+Early benchmarks suggest nuanced differences in embedding capabilities:
+- Slight variations in accuracy between Euclidean and Hyperbolic representations
+- Potential for more efficient representations in deeply nested structures
+
+## Supported Datasets (Experimental)
+- WordNet Taxonomy
+- TPC-H Schema Hierarchies
 
 ## Getting Started
 
@@ -81,19 +60,24 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-## Prototype Status
+## Research Focus
 
-This is a research prototype demonstrating:
-- Feasibility of hyperbolic vector representations
-- Flexible vector storage mechanisms
-- Preliminary hierarchical data handling
+This prototype aims to:
+- Investigate geometric data representation techniques
+- Explore challenges in hyperbolic embedding
+- Develop foundational understanding of alternative vector spaces
 
 ## Future Directions
-
+- Improved indexing methods
 - Distributed storage implementation
-- Advanced indexing methods
-- Enhanced search capabilities
-- Production-ready optimizations
----
+- Advanced search capabilities
 
-*Exploring the geometric frontiers of data representation*
+## Contribute
+
+Interested in geometric data representation research? We welcome:
+- Theoretical insights
+- Implementation improvements
+- Performance analysis
+- Use case explorations
+
+---
